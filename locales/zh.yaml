@@ -1,0 +1,383 @@
+name: Chinese
+
+start:
+  welcome: |
+    <a href="https://t.me/BotUpdates/111"><b>Livegram Bot</b></a> 是一個為 Telegram 建立的回應機器人。<a href="http://telegra.ph/What-is-Livegram-Bot-03-17">閱讀更多</a>關於它的資訊。
+
+    ${ad}
+  do: 好的。您現在想做什麼？
+  choose_language: 請選擇一個語言。
+  language_changed: 👌 完成！機器人語言已儲存。
+  help: |
+    如果您有任何問題，請先看 <a href="http://telegra.ph/Livegram-Help-03-29">我們的幫助</a>。
+
+    /ads - 購買廣告
+    /feedback - 聯絡支援
+    /lang - 變更機器人語言
+
+    加入 @LivegramUpdates 及 @secretship 與我們保持連繫。
+
+    ${ad}
+  example: |
+    以下是使用 Livegram 作為機器人的例子：
+
+    @ExampleSupportBot — 可以看到機器人如何運作的例子。
+  feedback: |
+    如果您有任何問題，請看 <a href="http://telegra.ph/Livegram-Help-03-29">我們的幫助</a>。您可以頁面底部找到我們的聯絡方式。
+  ads: |
+    Send /ads if you would like to buy ads in this bot. We have more than 5,000,000 active users.
+
+bots:
+  add:
+    welcome: |
+      To connect a bot, you should follow these two steps:
+
+      1. Open @BotFather and <a href="http://telegra.ph/Create-Bot-Livegram-FAQ-03-29">create a new bot</a>.
+      2. You'll get a token (e.g. 12345:6789ABCDEF) — just forward or copy-paste it to this chat.
+
+      <b>Warning!</b> Don't connect bots already used by other services like Chatfuel, Manybot, ect.
+
+      ${ad}
+
+    wrong_token: |
+      Doesn't look like a bot token. Please send me a token of your bot. It should look like this: <code>123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11</code>
+    error_add: |
+      Invalid token. Try to get a new one or use a token of an another bot.
+    bot_already_added: |
+      Looks familiar to me. You already have this bot connected.
+    connect: |
+      Success! @${bot.username} has been connected. The bot will forward any (including your own) messages sent to it.
+
+      <b>How do I reply to incoming messages?</b>
+      Use Telegram's <a href="https://telegram.org/tour/groups#replies">reply</a> feature. Swipe left (or double-click) on the message you want to reply.
+
+      <b>How can I allow other users to reply through my bot?</b>
+      Create a group and add your bot there so that all chat members can reply to incoming messages.
+
+      <b>How can I edit a welcome message?</b>
+      To edit a welcome message or add other languages to the bot, choose 'Open Bot Settings' and go to 'Localizations'.
+
+      If you have any questions, take a look at our <a href="http://telegra.ph/Livegram-Help-03-29">Livegram Help</a>.
+
+      ${ad}
+    owner_changed: Success! You are the owner of this bot now.
+  list:
+    not_found_bots: |
+      There is no connected bots yet. Send /addbot to connect a new one.
+    welcome: |
+      Сhoose a bot from the list below.
+
+      ${ad}
+    view_bot: |
+      Here it is: @${bot.username}. What do you want to do with the bot?
+
+      ${ad}
+  settings:
+    confirm_delete_bot: |
+      Are you sure you want to disconnect @${bot}?
+
+      Messages and bot statistics will not be deleted.
+    bot_deleted: 👌 Done! The bot is gone.
+    texts:
+      welcome: |
+        Here you can manage added languages. To edit message texts, choose a language from the list below.
+      select_language: |
+        Here it is: <b>${language.name}</b>. You can set this language as default or remove it from the bot.
+
+        ${language.is_default ? '<b>Used by default.</b> This is the language of a message sent on first start.' : ''}
+      add_language: |
+        Choose language you want to add to the bot.
+
+      language_added: 👌 Done! The language added.
+      language_deleted: 👌 Done! The language removed.
+      language_saved_by_default: 👌 Done! The language set as default.
+
+      change_texts: |
+        ${{
+          welcome: '<b>Welcome message.</b> This message is sent to users after they start the bot.',
+          after_sending: '<b>Auto-reply.</b> This message is sent automatically as a reply to all incoming messages. By default, it\'s disabled.'
+        }[change.key]}
+
+        <b>Current text</b>${change.is_default ? ' (default)' : ''}:
+        <pre>${change.current_text || '(not specified)'}</pre>
+
+        Send a new text to replace the current one. You can use <a href="https://core.telegram.org/bots/api#html-style">HTML-style formatting</a>.
+      error_parse_message: |
+        Formatting errors:
+
+        <pre>${description}</pre>
+
+        Please fix these errors and try again.
+      send_timer: |
+        Send a period of time during which an auto-reply should not be sent to a user repeatedly. For example: <code>5s</code>, <code>1m</code> or <code>1h</code>.
+      bad_timer: |
+        Incorrect amount of time. A period should be more than 5 seconds and less than 72 hours.
+    chats:
+      welcome: |
+        Choose a group you want to set up.
+      chats_not_found: |
+        There is no connected groups yet. The bot will send new incoming messages to the one-to-one chat.
+
+        To connect a new group, add @${username} as a member to it.
+      switch_language: |
+        Choose one or more languages for messages you want to be forwarded to this group.
+
+    stats: |
+      Statistics for @${username}:
+
+      <b>Users:</b>
+      All users: <b>${users_all}</b>
+      Blocked the bot: <b>${users_bot_blocked}</b>
+
+      <b>Messages:</b>
+      All messages: <b>${messages_all}</b>
+      Incoming: <b>${messages_messages}</b>
+      Outgoing: <b>${messages_reply}</b>
+
+      <i>The counter of users who blocked the bot will be updated when a broadcast post is sent.</i>
+
+  chat:
+    added: |
+      Success! The group "${title}" has been connected to @${bot}.
+
+      If you have multiple languages added, press 'Configure Group'.
+
+      To disconnect the group, kick the bot from chat.
+    removed: |
+      The group "${title}" was disconnected from @${bot} because the bot was kicked from chat.
+
+terms: |
+  By continuing, you agree not to:
+
+  - use our service to violate laws of your country.
+  - promote violence via connected bots.
+  - spread pornographic content via connected bots.
+
+  We reserve the right to update these <a href="http://telegra.ph/Livegram-Terms-of-Service-04-02">Terms of Service</a> later.
+
+  ${is_agreed
+    ? '✅ <b>You have agreed to our Terms of Service</b>'
+    : ''
+  }
+
+bot_blocked: |
+  Your bot @${username} was disconnected and blocked for violating our <a href="http://telegra.ph/Livegram-Terms-of-Service-04-02">Terms of Service</a>.
+
+  Contact us via @LivegramSupportBot if you think this is a mistake.
+
+bot_unblocked: |
+  Your bot @${username} has been unblocked.
+
+you_blocked: |
+  You cannot add new bots because one of your bots violates our <a href="http://telegra.ph/Livegram-Terms-of-Service-04-02">Terms of Service</a>.
+
+ads:
+  line: |-
+    ${ad.view_id ? '<a href="t.me/LivegramBot?start=ads"><b><i>' + (isBot ? 'Livegram Ads' : 'Ads') + '</i></b></a>: <a href="' + ad.url + '"><b>@' + ad.username + '</b></a> – ' + ad.description : ''}
+
+  faq: |
+    <b>Livegram Ads shortly explained</b>
+
+    • Your ad will be shown to Telegram <b>active</b> users.
+
+    • Price for 1,000 views is 57 RUB (~$0.8). The min amount is 20,000 views.
+
+    • Your ad becomes visible to users immediately after you made payment.
+
+    • You can track ad views in real time.
+
+    • Your ad will be displayed in the welcome message of @LivegramBot and another messages of the bot.
+
+    • Active ads will be shown to users randomly.
+
+  welcome: |
+    🚀 <b>Livegram Ads</b>
+
+    Here you can create ad for your channel, group or bot to show it in the welcome message of @LivegramBot and another messages of the bot.
+
+    Your ad will be shown to Telegram <b>active</b> users, owner of bots, chats and channels.
+
+    We are supported pay by Apple Pay, Google Pay and bank cards.
+
+  create:
+    disabled: Sorry, creating ads is currently disabled. Try again later.
+    chooseLanguage: Choose a language for your ad. This is a language of users that will see your ad.
+    username: |
+      <b>What to promote?</b>
+
+      Send a public link of your channel, group or bot. For example: username, t.me/username, t.me/userbot?start=payload.
+
+    description: |
+      <b>How to describe it?</b>
+
+      Send your ad text in without line breaks, @username or links.
+
+      The maximum length is 160 characters. Emojis or other emoticons cannot be used. Please follow punctuation and spelling.
+
+    description_too_long: Description is too long. Max 160 symbols.
+    description_too_short: Description is too short. Min 20 symbols.
+    description_has_links: The description cannot contain links or @username. Send me text <b>without links or @username</b>.
+
+    views: Choose an amount of views for your ad.
+
+    confirm: |
+      <b>Check and confirm</b>
+
+      @${username} – ${description}
+
+      Amount of views – ${views}
+
+      Is it OK?
+
+    send_to_moderate: |
+      ${user} · <a href="https://t.me/LivegramBot?start=open_ad_${peer_id}">№${peer_id}</a> · ${status} · ${languages[0]}
+
+      @${username} · ${description}
+
+      ${balance} views · ${price} ₽ · ~$${(price / 73).toFixed(0)}
+
+    confirmed: |
+      ℹ️ Your ad has been created and is awaiting moderation.
+
+      After passing moderation, you can make the payment and start showing your ad to all users.
+
+      Send /ads to view your created ads.
+
+  checking:
+    send_to_checking: |
+      ${user} – <a href="https://t.me/LivegramBot?start=open_ad_${peer_id}">№${peer_id}</a>
+
+      @${username} · ${description}
+
+      ${count} · ${balance} views · ${price} ₽ · ~$${(price / 73).toFixed(0)}
+
+      ${created_at}
+
+  n:
+    confirmed: |
+      ✅ Your ad has passed moderation.
+
+      Payment link ${price} ₽ · ~$${(price / 73).toFixed(0)}:
+      ${url}
+
+      Your ad becomes visible to users immediately after you made payment.
+    canceled: |
+      ℹ️ Sorry, your ad has not passed moderation.
+
+      Possible reasons:
+      – Description is incorrected or contains errors.
+      – Incorrect @username.
+      – Did not meet our policy (we don't promote gambling, scam, drugs, ect).
+      – Your channel is private.
+
+      You can <a href="https://t.me/LivegramBot?start=ads_create">create a new ad</a> or <a href="https://t.me/LivegramSupportBot">contact us</a> for details.
+    notified: ✅ OK.
+  manage:
+    welcome: Choose an ad from the list.
+    ad: |
+      Ad #${peer_id} · ${languages[0] || ''}
+
+      <a href="${url}">@${username}</a> · ${description}
+
+      Total views: ${balance}
+      Price: ${price} ₽ · ~$${(price / 73).toFixed(0)}
+
+      <b>Statistics:</b>
+      Views – ${stats_views}
+
+      Status: ${{
+        'created': 'on moderation',
+        'approved': 'payment required',
+        'canceled': 'moderation failed',
+        'paid': 'views on',
+        'views_completed': 'views completed'
+        }[status]
+      }
+    pay: |
+      💳 Choose a payment method.
+
+      <b>PayTodo</b> is the recommended payment method which mostly supports any credit cards.
+
+      You can also use PayPal if PayTodo is not available.
+
+      Contact us via @LivegramSupportBot if you have any issue.
+    enter_new_description: |
+      @${username} · <code>${description}</code>
+
+      Send a new ad description.
+
+btn:
+  menu:
+    add_bot: 🤖 Add Bot
+    my_bots: 🏝 My Bots
+    ads: 🏟 Ads
+    help: 👨‍🔧 Help
+
+  terms:
+    agree_and_continue: Agree and Continue
+
+  common:
+    true: Yes, It's Right
+    back: Back
+    back_inline: « Back
+    cancel: Cancel
+    help: Help
+
+  bots:
+    add_bot: Connect Bot
+    set: Open Bot Settings
+
+    texts: Localizations
+    chats: Groups
+    statistics: Statistics
+    delete_bot: Disconnect Bot
+    back_to_list: « Back to Bots List
+
+  settings:
+    users:
+      newsletter: 廣播
+    chats:
+      connect_language: 設定群組
+    texts:
+      add_language: 新增語言
+      is_default: 此語言已設為預設
+      set_default: 設為預設
+      change: Edit Message Texts
+      delete: 移除語言
+      reset: 重設
+      skip: 繼續 »
+      complete: 儲存變更
+      timer: "${timer
+        ? 'Cooldown Timer: ' + timer
+        : 'Set Cooldown Timer'
+      }"
+      disable_timer: 重設計時器
+
+  ads:
+    back: « 返回
+    open_ad: 開啟廣告
+    menu:
+      create: 建立廣告
+      manage: 管理廣告
+      faq: 幫助
+      open_support: 聯絡我們
+    languages:
+      ru: Russian
+      en: English
+      zh: Chinese
+    create:
+      yes: Yes
+      no: No
+    checking:
+      yes: Yes
+      edit: Edit
+      skip: Skip
+    manage:
+      name: '@${username} – ${balance}'
+      open_pay: 🚀 Start Ad
+      pay:
+        cloudpayments: CloudPayments
+        paytodo: PayTodo
+        paypal: PayPal
+      problem_with_pay: Contact Us
+      edit_description: Edit Description
