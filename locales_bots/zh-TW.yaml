@@ -1,0 +1,27 @@
+language_info:
+  is_enabled: true
+  name: Chinese (Traditional)
+
+start:
+  choose_language: '請選擇您的語言：'
+  language_changed: 好，語言已儲存。
+  copyright: |
+    這個機器人使用 @LivegramBot 製作
+    
+cannot_forward: |
+  您不能轉發別人的訊息。
+  
+cannot_edit: |
+  若您想要接收者看到此編輯，請重新傳送訊息。
+
+welcome: |-
+  您好！
+  
+  您可以使用這個機器人聯絡我們。
+after_sending: (strings are not specified)
+
+ban: |
+  您已被${until ? '禁言到：' + until + ' UTC' : '永久禁言'}.${reason ? '\n\n原因：' + reason : ''}
+
+unban: |
+  您已被解除禁言。
