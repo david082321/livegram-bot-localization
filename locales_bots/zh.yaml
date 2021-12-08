@@ -1,6 +1,6 @@
 language_info:
   is_enabled: true
-  name: Chinese (Traditional)
+  name: 繁體中文
 
 start:
   choose_language: '請選擇您的語言：'
@@ -18,7 +18,7 @@ welcome: |-
   您好！
   
   您可以使用這個機器人聯絡我們。
-after_sending: (strings are not specified)
+after_sending: （未指定字串）
 
 ban: |
   您已被${until ? '禁言到：' + until + ' UTC' : '永久禁言'}.${reason ? '\n\n原因：' + reason : ''}
