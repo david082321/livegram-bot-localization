@@ -1,4 +1,4 @@
-name: Chinese
+name: 繁體中文
 
 start:
   welcome: |
@@ -40,11 +40,11 @@ bots:
       ${ad}
 
     wrong_token: |
-      Doesn't look like a bot token. Please send me a token of your bot. It should look like this: <code>123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11</code>
+      看起來不像是一個機器人令牌。請給我發送一個你的機器人的令牌。它應該看起來像這樣： <code>123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11</code>
     error_add: |
-      Invalid token. Try to get a new one or use a token of an another bot.
+      無效令牌。嘗試取得一個新的 或 使用另一個機器人的令牌。
     bot_already_added: |
-      Looks familiar to me. You already have this bot connected.
+      看起來很熟悉，我記得你已經連結了這個機器人。
     connect: |
       Success! @${bot.username} has been connected. The bot will forward any (including your own) messages sent to it.
 
@@ -161,15 +161,15 @@ terms: |
   }
 
 bot_blocked: |
-  Your bot @${username} was disconnected and blocked for violating our <a href="http://telegra.ph/Livegram-Terms-of-Service-04-02">Terms of Service</a>.
+  您的機器人 @${username} 因違反我們的<a href="http://telegra.ph/Livegram-Terms-of-Service-04-02">服務條款</a>而被斷開連結並被封鎖。
 
-  Contact us via @LivegramSupportBot if you think this is a mistake.
+  如果你認為有問題，請通過 @LivegramSupportBot 聯絡我們。
 
 bot_unblocked: |
-  Your bot @${username} has been unblocked.
+  你的機器人 @${username} 已經被解除封鎖了。
 
 you_blocked: |
-  You cannot add new bots because one of your bots violates our <a href="http://telegra.ph/Livegram-Terms-of-Service-04-02">Terms of Service</a>.
+  你不能新增機器人，因為你的某個機器人違反了我們的<a href="http://telegra.ph/Livegram-Terms-of-Service-04-02">服務條款</a>。
 
 ads:
   line: |-
@@ -308,30 +308,30 @@ ads:
 
 btn:
   menu:
-    add_bot: 🤖 Add Bot
-    my_bots: 🏝 My Bots
-    ads: 🏟 Ads
-    help: 👨‍🔧 Help
+    add_bot: 🤖 新增機器人
+    my_bots: 🏝 我的機器人
+    ads: 🏟 廣告
+    help: 👨‍🔧 幫助
 
   terms:
-    agree_and_continue: Agree and Continue
+    agree_and_continue: 同意並繼續
 
   common:
-    true: Yes, It's Right
-    back: Back
-    back_inline: « Back
-    cancel: Cancel
-    help: Help
+    true: 是，我確定
+    back: 返回
+    back_inline: « 返回
+    cancel: 取消
+    help: 幫助
 
   bots:
-    add_bot: Connect Bot
-    set: Open Bot Settings
+    add_bot: 連結機器人
+    set: 開啟機器人設定
 
-    texts: Localizations
-    chats: Groups
-    statistics: Statistics
-    delete_bot: Disconnect Bot
-    back_to_list: « Back to Bots List
+    texts: 語言
+    chats: 群組
+    statistics: 統計
+    delete_bot: 解除連結機器人
+    back_to_list: « 返回機器人列表
 
   settings:
     users:
@@ -342,14 +342,14 @@ btn:
       add_language: 新增語言
       is_default: 此語言已設為預設
       set_default: 設為預設
-      change: Edit Message Texts
+      change: 編輯訊息文字
       delete: 移除語言
       reset: 重設
       skip: 繼續 »
       complete: 儲存變更
       timer: "${timer
-        ? 'Cooldown Timer: ' + timer
-        : 'Set Cooldown Timer'
+        ? '冷卻計時器：' + timer
+        : '設定冷卻計時器'
       }"
       disable_timer: 重設計時器
 
@@ -366,12 +366,12 @@ btn:
       en: English
       zh: Chinese
     create:
-      yes: Yes
-      no: No
+      yes: 是
+      no: 否
     checking:
-      yes: Yes
-      edit: Edit
-      skip: Skip
+      yes: 確定
+      edit: 編輯
+      skip: 跳過
     manage:
       name: '@${username} – ${balance}'
       open_pay: 🚀 Start Ad
