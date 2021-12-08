@@ -1,0 +1,56 @@
+not_access: 對不起，你沒有權限。
+
+welcome: |
+  你可以建立一個廣播帖子，將其發送給所有機器人使用者。
+  
+  /newsletter - 建立一個新的廣播帖子
+  /cancel - 取消目前操作
+  
+newsletter:
+  welcome: |
+    按語言選擇你要發送廣播帖子的使用者。
+    
+    輸入 /cancel 取消目前操作。
+  send: >
+    將向 ${lang} 語言的 <b>${count} 個使用者</b>發送一個廣播帖子。
+  
+  
+    發送一條或多條你想包含在帖子中的訊息。它可以是任何東西：文字、照片、影片，甚至是一個貼紙。你也可以從一個頻道轉發一條訊息，這樣你就可以看到它的實際瀏覽量。
+
+
+    輸入 /cancel 取消目前操作。
+    
+  error_sent: | 
+    發送廣播帖子時發生錯誤：
+  
+    <pre>${error}></pre>
+  send_done: |
+    這條訊息已經被加到帖子中。你可以繼續發送訊息。輸入 /done 來發送這個廣播帖子。
+    
+    /preview — 預覽廣播帖子
+    /cancel - 取消目前操作
+  
+  done: |
+    你確定要發送這個廣播帖子嗎？
+    
+    輸入 /send 確認發送，或 /back 回到主選單。
+    
+  preview_sent: |
+    上面是發送的帖子預覽。你可以繼續發送訊息。輸入 /done 來發送這個廣播帖子。
+
+    /preview — 預覽廣播帖子
+    /cancel - 取消目前操作
+  start: |
+    🕒 開始向 ${count} 個使用者發送廣播帖子！
+  processing: |
+    進度：${sent} / ${all} (${percent}%)
+    剩餘：${waiting}
+  end: |
+    💥 發送廣播帖子已經成功完成！
+    
+#    <b>所有使用者：</b>${count}
+#    <b>收到數量：</b>${count_ok}
+#    <b>封鎖數量：</b>${count_block}
+  
+keyboard:
+  all_languages: 所有語言
